@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<Params>
+    <IgniteConf>
+        <!-- you have to configure parameters IgnitionType, EMBEDDED or REMOTE is needed  -->
+        <!-- if IgnitionType is EMBEDDED ,you can ignore `UriConf` tag ,-->
+        <!-- if IgnitionType is REMOTE, you have to configure `uriConf` tag ,the sub tag is `hostname` and `port` -->
+        <!--<IgnitationType>EMBEDDED</IgnitationType>-->
+
+        <IgnitationType>REMOTE</IgnitationType>
+        <uriConf>
+            <hostname>ubuntu</hostname>
+            <port>47500..47509</port>
+        </uriConf>
+    </IgniteConf>
+</Params>

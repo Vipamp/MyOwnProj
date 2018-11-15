@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<Params>
+    <IgniteConf>
+        <uriConf>
+            <hostname>ubuntu</hostname>
+            <port>47500..47509</port>
+        </uriConf>
+    </IgniteConf>
+</Params>
