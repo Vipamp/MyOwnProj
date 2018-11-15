@@ -6,9 +6,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>MyFlinkProj</module>
         <module>IgniteDemo</module>
-        <module>MyFlinkProj</module>
         <module>MyUtils</module>
         <module>JavaAdvanced</module>
         <module>FlinkDemo</module>
