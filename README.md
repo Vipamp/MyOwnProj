@@ -7,5 +7,5 @@
 > * 3、JavaAdvanraced：自己学习Java的一些高级特性的工程
 > * 4、JuliaDemo:自己学习julia时的一些Demo
 > * 5、MyUtils：自己开发的一些常用工具
-> * 6、ScalaLangStudy：学习Scala使用的Demo案例
+> * 6、ScalaDemo：学习Scala使用的Demo案例
 > * 7、SpringDemo：自己学习Spring的一些Demo案例
