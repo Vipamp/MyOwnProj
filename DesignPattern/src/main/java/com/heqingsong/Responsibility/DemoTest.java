@@ -1,5 +1,5 @@
 /**
- * File: DemoTest.java 　　2018/11/18 22:42
+ * File: DemoTest.java 　　2018/11/19 11:59
  * <p>
  * Copyright (c) 2018-2028  HeQingsong(ahheqingsong@126.com) All rights reserved.
  * <p>
@@ -12,16 +12,22 @@
 package com.heqingsong.Responsibility;
 
 public class DemoTest {
+    public static Leader getResponsibilityChain() {
+        Leader ceo = new CEO();
+        Leader manager = new Manager();
+        manager.setNextLeader(ceo);
+        return manager;
+    }
+
     public static void main(String[] args) {
-        AbstractLogger infoLogger = new InfoLogger();
-        AbstractLogger debugLogger = new DebugLogger();
-        AbstractLogger errorLogger = new ErrorLogger();
+        Leader chain = getResponsibilityChain();
+        HolidayRequest holidayRequest = new HolidayRequest("HQS", 1, "sleep");
+        chain.treasRequest(holidayRequest);
 
-        infoLogger.setNextLogger(debugLogger);
-        debugLogger.setNextLogger(errorLogger);
+        HolidayRequest holidayRequest2 = new HolidayRequest("HQS2", 3, "ill");
+        chain.treasRequest(holidayRequest2);
 
-        infoLogger.logMessage(AbstractLogger.INFO, "show info1");
-        infoLogger.logMessage(AbstractLogger.DEBUG, "show info2");
-
+        HolidayRequest holidayRequest3 = new HolidayRequest("HQS3", 10, "ill");
+        chain.treasRequest(holidayRequest3);
     }
 }
