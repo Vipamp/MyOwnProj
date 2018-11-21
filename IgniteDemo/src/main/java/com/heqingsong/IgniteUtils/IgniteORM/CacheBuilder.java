@@ -15,8 +15,11 @@ import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
 import org.apache.ignite.cache.CacheMode;
 import org.apache.ignite.configuration.CacheConfiguration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CacheBuilder {
+    private static Logger logger = LoggerFactory.getLogger(CacheBuilder.class);
     private static Ignite ignite = null;
 
     public static void init(Ignite ignite) {
@@ -37,6 +40,17 @@ public class CacheBuilder {
         classCacheCfg.setName(cacheName);
         classCacheCfg.setCacheMode(CacheMode.PARTITIONED);
         classCacheCfg.setIndexedTypes(String.class, clazz);
-        return ignite.getOrCreateCache(classCacheCfg);
+        IgniteCache<String, AbstractPojoModel> igniteCache = ignite.getOrCreateCache(classCacheCfg);
+        logger.info("create ignite cache {} success", clazz.getName());
+        return igniteCache;
+    }
+
+    /**
+     * stop ignite connection.
+     *
+     * @author：HeQingsong
+     */
+    public static void close() {
+        ignite.close();
     }
 }

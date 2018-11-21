@@ -70,6 +70,7 @@ public class RemoteIgniteInstance {
         spi.setIpFinder(ipFinder);
         IgniteConfiguration cfg = new IgniteConfiguration();
         cfg.setDiscoverySpi(spi);
+        cfg.setClientMode(true);
         logger.info("initizalize remote ignition succeess!");
         return Ignition.start(cfg);
     }

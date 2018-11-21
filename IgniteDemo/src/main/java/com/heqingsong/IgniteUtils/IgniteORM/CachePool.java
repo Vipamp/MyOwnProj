@@ -71,6 +71,16 @@ public class CachePool {
         return igniteCache;
     }
 
+    /**
+     * clear cache pool and stop ignite conection
+     *
+     * @author：HeQingsong
+     */
+    public void close() {
+        logger.info("clear cache pool success! ");
+        poolMap.clear();
+        CacheBuilder.close();
+    }
 
     /**
      * this function is used to put IgniteCache to cache pool, but can not be used for distributed system.

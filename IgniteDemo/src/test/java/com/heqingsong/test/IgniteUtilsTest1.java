@@ -58,31 +58,36 @@ public class IgniteUtilsTest1 {
      * 对象B绑定了对象A，如果对象A更新了，对象B不会在ignite中更新，
      */
     public static void test3() {
-        try {
-            student.setStuId(1);
-            student.setAge(2);
-            student.setName("HQS");
-            student.setClasses(classes);
-            studentIgniteCache.put(student.keyBuilder(), student);
+        student.setStuId(1);
+        student.setAge(2);
+        student.setName("HQS");
+        student.setClasses(classes);
+        studentIgniteCache.put(student.keyBuilder(), student);
 
-            Student tmp_student = (Student) studentIgniteCache.get(student.keyBuilder());
-            System.out.println(tmp_student);
+        Student tmp_student = (Student) studentIgniteCache.get(student.keyBuilder());
+        System.out.println(tmp_student);
 
-            classes.setName("I am HeQingsong");
-            classesIgniteCache.put(classes.keyBuilder(), classes);
+        classes.setName("I am HeQingsong");
+        classesIgniteCache.put(classes.keyBuilder(), classes);
 
-            tmp_student = (Student) studentIgniteCache.get(student.keyBuilder());
-            System.out.println(tmp_student);
+        tmp_student = (Student) studentIgniteCache.get(student.keyBuilder());
+        System.out.println(tmp_student);
 
-            studentIgniteCache.put(student.keyBuilder(), student);
-            tmp_student = (Student) studentIgniteCache.get(student.keyBuilder());
-            System.out.println(tmp_student);
-        } catch (
-                Exception e) {
-        } finally {
-            classesIgniteCache.close();
-            studentIgniteCache.close();
-        }
+        studentIgniteCache.put(student.keyBuilder(), student);
+        tmp_student = (Student) studentIgniteCache.get(student.keyBuilder());
+        System.out.println(tmp_student);
+    }
+
+    /**
+     * 清空cache pool 中的IgniteCache对象，并关闭ignite连接
+     *
+     * @return : void
+     * @author：HeQingsong
+     */
+    private static void stop() {
+        classesIgniteCache.close();
+        studentIgniteCache.close();
+        cachePool.close();
     }
 
     public static void main(String[] args) {
@@ -90,5 +95,6 @@ public class IgniteUtilsTest1 {
         test1();
         test2();
         test3();
+        stop();
     }
 }
