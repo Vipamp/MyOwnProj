@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1、通过属性配置，生成bean对象-->
+    <bean id="helloworld" class="com.heqingsong.SpringBean.HelloWorld">
+        <property name="name" value="HQS"/>
+    </bean>
+
+    <!-- 2、通过构造器，生成bean对象，如果类的构造器是重载的，在参数后面需要加上参数类型加以区分 -->
+    <bean id="car1" class="com.heqingsong.SpringBean.Car">
+        <constructor-arg value="BMW" type="java.lang.String"/>
+        <constructor-arg value="ShangHai" type="java.lang.String"/>
+        <constructor-arg value="25.4" type="double"/>
+    </bean>
+
+    <!-- 如果有特殊字符，需要使用<![CDATA[]] 处理 ，除了在constructor-arg中配置参数，也可以用value子标签配置 -->
+    <bean id="car2" class="com.heqingsong.SpringBean.Car">
+        <constructor-arg value="BMW" type="java.lang.String"/>
+        <constructor-arg type="java.lang.String">
+            <value><![CDATA[<BEIGING>^]]></value>
+        </constructor-arg>
+        <constructor-arg value="100" type="int"/>
+    </bean>
+
+    <!-- 通过ref，来配置bean对象之间的依赖关系 -->
+    <bean id="people" class="com.heqingsong.SpringBean.People">
+        <property name="name" value="HQS"/>
+        <property name="age" value="25"/>
+        <property name="car" ref="car1"/>
+    </bean>
+
+    <!-- 对象依赖关系，通过内部bean创建 -->
+    <bean id="people2" class="com.heqingsong.SpringBean.People">
+        <property name="name" value="HQS2"/>
+        <property name="age" value="26"/>
+        <property name="car">
+            <bean class="com.heqingsong.SpringBean.Car">
+                <constructor-arg index="0" type="java.lang.String" value="AODI"/>
+                <constructor-arg index="1" type="java.lang.String" value="Beijing"/>
+                <constructor-arg index="2" type="double" value="102.4"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 给对象配置集合属性:list, map -->
+    <bean id="people3" class="com.heqingsong.SpringBean.People">
+        <property name="name" value="HQS3"/>
+        <property name="age" value="27"/>
+        <property name="cars">
+            <list>
+                <!-- list 里面，可以使用ref引用，也可以使用bean创建 -->
+                <ref bean="car1"/>
+                <bean class="com.heqingsong.SpringBean.Car">
+                    <property name="brand" value="BMW"/>
+                    <property name="price" value="100"/>
+                    <property name="addr" value="NewYork"/>
+                    <property name="maxSpeed" value="100"/>
+                </bean>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <!-- key 和 value 都可以写字符串，或者指向某一个bean -->
+                <entry key="name" value="HeQingsong"/>
+                <entry key="age" value="25"/>
+                <entry key="car" value-ref="car1"/>
+                <entry key-ref="helloworld" value-ref="car1"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="myProperties" class="com.heqingsong.SpringBean.MyProperties">
+        <property name="properties">
+            <!-- 可以通过props, 给properties配置信息 -->
+            <props>
+                <prop key="driver">com.jdbc.mysql.Driver</prop>
+                <prop key="user">root</prop>
+                <prop key="passwd">123456</prop>
+                <prop key="url">jdbc:mysql:///test</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 使用util包配置集合属性，然后在bean中引用
+    <util:list id="myCarList">
+        <ref bean="car1"/>
+        <ref bean="car2"/>
+    </util:list>
+
+    <bean id="people4" class="com.heqingsong.SpringBean.People">
+        <property name="cars" ref="myCarList"/>
+    </bean>
+
+    <bean id="people5" class="com.heqingsong.SpringBean.People">
+        <property name="cars" ref="myCarList"/>
+    </bean>
+    -->
+    
+    <!-- 使用p空间，利用p:标签，装配bean对象的属性-->
+    <bean id="people6" class="com.heqingsong.SpringBean.People" p:age="35" p:name="HeQingsong"/>
+</beans>

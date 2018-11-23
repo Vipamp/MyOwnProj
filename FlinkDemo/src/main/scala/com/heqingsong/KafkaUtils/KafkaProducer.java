@@ -20,8 +20,8 @@ public class KafkaProducer {
     private static final String BROKERLIST = "broker-list";
 
     public static FlinkKafkaProducer<String> getInstance(String topic, Properties properties) {
-        return new FlinkKafkaProducer<String>(properties.getProperty(BROKERLIST), topic, new SerializationSchema() {
-            public byte[] serialize(Object element) {
+        return new FlinkKafkaProducer<String>(properties.getProperty(BROKERLIST), topic, new SerializationSchema<byte[]>() {
+            public byte[] serialize(byte[] bytes) {
                 return new byte[0];
             }
         });

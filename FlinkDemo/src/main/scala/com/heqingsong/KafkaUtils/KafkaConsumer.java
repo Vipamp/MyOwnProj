@@ -18,6 +18,6 @@ import java.util.Properties;
 
 public class KafkaConsumer {
     public static FlinkKafkaConsumer081<String> getInstance(String topic, Properties properties) {
-        return new FlinkKafkaConsumer081(topic, new SimpleStringSchema(), properties);
+        return new FlinkKafkaConsumer081<String>(topic, new SimpleStringSchema(), properties);
     }
 }
