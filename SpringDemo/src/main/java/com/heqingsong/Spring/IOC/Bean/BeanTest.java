@@ -18,7 +18,7 @@ import java.util.Properties;
 
 public class BeanTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("SpringBeanTest.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("IOCXmlFold/SpringBeanTest.xml");
         HelloWorld helloWorld = (HelloWorld) context.getBean("helloworld");
         System.out.println(helloWorld);
 

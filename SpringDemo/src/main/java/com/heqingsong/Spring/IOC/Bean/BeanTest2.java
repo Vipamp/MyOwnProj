@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BeanTest2 {
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("SpringBeanTest2.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("IOCXmlFold/SpringBeanTest2.xml");
         People people = (People) ctx.getBean("people");
         System.out.println(people);
 

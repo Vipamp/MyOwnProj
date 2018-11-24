@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DemoTest {
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("GenericityAutoWired.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("IOCXmlFold/GenericityAutoWired.xml");
         UserService userService = (UserService) ctx.getBean("userService");
         userService.add();
     }

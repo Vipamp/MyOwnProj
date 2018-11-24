@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class loadConf2XmlTest {
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("LoadConf2Xml.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("IOCXmlFold/LoadConf2Xml.xml");
         DriverConf dbinfo = (DriverConf) ctx.getBean("driverInfo");
         System.out.println(dbinfo);
     }

@@ -15,7 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DemoTest {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("AnnotationBean.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("IOCXmlFold/AnnotationBean.xml");
         MyComponent myComponent = (MyComponent) ctx.getBean("myComponent");
         System.out.println(myComponent);
 

@@ -17,7 +17,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DemoTest {
 
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("AutoWired.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("IOCXmlFold/AutoWired.xml");
         ((MakeFactory) ctx.getBean("makeFactory")).make();
     }
 }

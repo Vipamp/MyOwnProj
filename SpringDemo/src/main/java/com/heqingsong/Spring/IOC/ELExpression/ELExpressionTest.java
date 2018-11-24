@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ELExpressionTest {
     public static void main(String[] args){
-        ApplicationContext ctx= new ClassPathXmlApplicationContext("SpringEL.xml");
+        ApplicationContext ctx= new ClassPathXmlApplicationContext("IOCXmlFold/SpringEL.xml");
         Person person = (Person)ctx.getBean("person");
         System.out.println(person.toString());
     }
