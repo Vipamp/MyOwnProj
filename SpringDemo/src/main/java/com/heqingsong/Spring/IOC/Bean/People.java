@@ -9,7 +9,7 @@
  * @since: JDK1.8
  * @author: HeQingsong
  */
-package com.heqingsong.SpringBean;
+package com.heqingsong.Spring.IOC.Bean;
 
 import java.util.List;
 import java.util.Map;

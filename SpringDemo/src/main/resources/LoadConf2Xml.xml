@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+        bean配置参数，引用外部的 properties 文件
+        需要导入context命名空间，并在schemaLocation中加入对应的xsd文件
+    -->
+    <context:property-placeholder location="conf.properties"/>
+
+    <!-- bean 在配置参数时，${}格式的参数值，会在对应的properties文件中获取-->
+    <bean id="driverInfo" class="com.heqingsong.Spring.IOC.Loadconf2xml.DriverConf">
+        <property name="user" value="${user}"/>
+        <property name="driver" value="${driver}"/>
+        <property name="passwd" value="${passwd}"/>
+        <property name="url" value="${url}"/>
+    </bean>
+</beans>

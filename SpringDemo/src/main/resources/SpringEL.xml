@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="com.heqingsong.Spring.IOC.ELExpression.Car">
+        <property name="brand" value="BMW"/>
+        <!-- T()表示调用该类的静态方法或者属性-->
+        <property name="length" value="#{T(java.lang.Math).PI * 10}"/>
+        <property name="price" value="30000"/>
+    </bean>
+
+    <bean id="person" class="com.heqingsong.Spring.IOC.ELExpression.Person">
+        <!--
+            1. value = "#{car}" 等同于 ref = "car"
+            2. #{}中间可以使用数字或者字符串，如果使用字符串，用单引号，
+                使用EL写字符串没有意义，可以使用计算公式计算数字
+            3. 可以调用前面定义好的bean对象的成员属性和方法
+         -->
+        <property name="car" value="#{car}"/>
+        <property name="age" value="#{24}"/>
+        <property name="name" value="#{'HeQingsong'}"/>
+        <property name="carBrand" value="#{car.brand}"/>
+        <property name="carDesc" value="#{car.toString()}"/>
+        <property name="level" value="#{car.price>10000?'金领':'白领'}"/>
+    </bean>
+</beans>

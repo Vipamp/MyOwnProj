@@ -9,7 +9,7 @@
  * @since: JDK1.8
  * @author: HeQingsong
  */
-package com.heqingsong.SpringBean;
+package com.heqingsong.Spring.IOC.Bean;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -48,6 +48,6 @@ public class BeanTest {
 //        System.out.println(people5);
 
         System.out.println((People) context.getBean("people6"));
-
+        System.out.println((People) context.getBean("people7"));
     }
 }

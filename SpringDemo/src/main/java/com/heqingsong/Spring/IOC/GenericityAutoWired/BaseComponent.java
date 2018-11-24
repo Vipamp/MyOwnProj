@@ -1,5 +1,5 @@
 /**
- * File: AutoWiredDemo.java 　　2018/11/23 0:39
+ * File: BaseResponsitory.java 　　2018/11/24 20:36
  * <p>
  * Copyright (c) 2018-2028  HeQingsong(ahheqingsong@126.com) All rights reserved.
  * <p>
@@ -9,7 +9,9 @@
  * @since: JDK1.8
  * @author: HeQingsong
  */
-package com.heqingsong.SpringAutoWired;
+package com.heqingsong.Spring.IOC.GenericityAutoWired;
 
-public class AutoWiredDemo {
+public class BaseComponent<T> {
+
 }
+

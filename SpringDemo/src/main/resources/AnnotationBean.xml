@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+        指定扫描的包
+            base-package: 指定待扫描的包（必须）
+            resource-pattern: 指定扫描的类，中间用逗号分隔
+        子标签：
+            <context:exclude-filter> 指定排除哪些类
+            <context:include-filter> 指定包含哪些类
+            这里的type和expression配合使用，可以按照注解名称、类名或者接口的实现类来选择排除或者包含哪些类
+    -->
+    <context:component-scan base-package="com.heqingsong.Spring.IOC.AnnotationBean">
+        <!-- 过滤掉哪些类，不需要创建bean对象，交给IOC管理-->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Component"/>-->
+
+        <!-- 添加哪些类，需要去创建 bean 对象，其他的不创建 bean 对象, 使用这种方式，component-scan 标签有个属性 use-default-filters 要设置为 false -->
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>-->
+    </context:component-scan>
+</beans>

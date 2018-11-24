@@ -1,0 +1,1 @@
+# 1、xml文件，在配置 bean 时，bean的参数值，可以从外部文件 properites 中自动读取参数填入，配置bean对象

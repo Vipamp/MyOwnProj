@@ -11,6 +11,7 @@
         <module>JavaAdvanced</module>
         <module>FlinkDemo</module>
         <module>DesignPattern</module>
+        <module>SpringBootDemo</module>
     </modules>
     <properties>
         <slf4j.version>1.7.7</slf4j.version>
