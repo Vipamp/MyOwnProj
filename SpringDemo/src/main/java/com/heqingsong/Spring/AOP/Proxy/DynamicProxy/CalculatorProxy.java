@@ -58,11 +58,23 @@ public class CalculatorProxy {
              */
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                String methodName = method.getName();
-                Object result = method.invoke(target, args);
-                System.out.println("execute method " + methodName + ", the result is " + result);
-                return result;
+                try {
+                    // A. 前置通知
+                    String methodName = method.getName();
+
+                    Object result = method.invoke(target, args);
+
+                    // B. 返回通知
+                    System.out.println("execute method " + methodName + ", the result is " + result);
+                    return result;
+                } catch (Exception e) {
+                    // C. 异常通知
+                    e.printStackTrace();
+                }
+                // D. 后置通知
+                return null;
             }
+
         };
         //4、依据类加载器、代理类需要实现的方法，和反射指定的句柄函数，动态创建一个代理被代理对象对应的代理对象。
         return (CalcInterface) Proxy.newProxyInstance(classLoader, classes, invocationHandler);
