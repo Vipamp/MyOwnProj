@@ -124,6 +124,6 @@ public class LoggerAspect {
         }
         // 4、后置通知
         System.out.println("@After: call method " + methodName + " end.");
-        return (int) proceed;
+        return 0;//(int) proceed;
     }
 }

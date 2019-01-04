@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+
 @Component("makeFactory")
 public class MakeFactory implements Factory {
 
@@ -25,7 +26,7 @@ public class MakeFactory implements Factory {
     @Autowired(required = false)
     CarFactory carFactory;
 
-    TrainFactory trainFactory;
+    com.heqingsong.Spring.IOC.AutoWire.TrainFactory trainFactory;
 
     public void setCarFactory(CarFactory carFactory) {
         this.carFactory = carFactory;
@@ -37,7 +38,7 @@ public class MakeFactory implements Factory {
      */
     @Autowired
     @Qualifier("myTrainFactory")
-    public void setTrainFactory(TrainFactory trainFactory) {
+    public void setTrainFactory(com.heqingsong.Spring.IOC.AutoWire.TrainFactory trainFactory) {
         this.trainFactory = trainFactory;
     }
 

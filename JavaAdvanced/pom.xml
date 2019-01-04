@@ -11,6 +11,10 @@
 
     <groupId>com.heqingsong</groupId>
     <artifactId>JavaAdvanced</artifactId>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
     <build>
         <plugins>
             <plugin>

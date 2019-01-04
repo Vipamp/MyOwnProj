@@ -11,6 +11,12 @@
 
     <groupId>com.heqingsong</groupId>
     <artifactId>MyUtils</artifactId>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>w3c</groupId>

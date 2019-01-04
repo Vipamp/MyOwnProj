@@ -11,6 +11,7 @@
  */
 package com.heqingsong.Spring.IOC.AutoWire;
 
+
 import org.springframework.stereotype.Component;
 
 @Component("myTrainFactory")

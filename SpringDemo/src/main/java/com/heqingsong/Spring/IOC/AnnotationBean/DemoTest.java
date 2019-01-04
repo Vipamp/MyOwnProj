@@ -11,11 +11,14 @@
  */
 package com.heqingsong.Spring.IOC.AnnotationBean;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DemoTest {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("IOCXmlFold/AnnotationBean.xml");
+        // 1. 加载 xml 文件获取Context对象
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("IOCXmlFold/AnnotationBean.xml");
+
         MyComponent myComponent = (MyComponent) ctx.getBean("myComponent");
         System.out.println(myComponent);
 

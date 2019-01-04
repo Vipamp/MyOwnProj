@@ -18,6 +18,6 @@ public class DemoTest {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("IOCXmlFold/AutoWired.xml");
-        ((MakeFactory) ctx.getBean("makeFactory")).make();
+        ((com.heqingsong.Spring.IOC.AutoWire.MakeFactory) ctx.getBean("makeFactory")).make();
     }
 }
