@@ -3,7 +3,7 @@
  * @Date:2018/9/11 11:39
  * @Describe： 这个是在命令行中，通过指定命令参数的方式，获取执行的参数
  */
-package com.heqingsong.ParamAnalysis;
+package ParamAnalysis;
 
 import org.apache.flink.api.java.utils.ParameterTool;
 

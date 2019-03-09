@@ -3,7 +3,7 @@
  * @Date:2018/9/11 10:29
  * @Describe： 使用java代码，测试批处理的WordCount
  */
-package com.heqingsong.WordCount;
+package WordCount;
 
 
 import org.apache.flink.api.java.ExecutionEnvironment;

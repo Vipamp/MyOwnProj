@@ -3,10 +3,10 @@
  * @Date:2018/9/9 16:28
  * @Describe： 使用Java代码测试使用Flink实时获取数据，并统计当前2秒内，单词出现的次数
  */
-package com.heqingsong.WordCount;
+package WordCount;
 
 
-import com.heqingsong.ParamAnalysis.JavaParamsUtils;
+import ParamAnalysis.JavaParamsUtils;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.functions.ReduceFunction;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;

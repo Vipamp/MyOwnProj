@@ -9,7 +9,7 @@
  * @since: JDK1.8
  * @author: HeQingsong
  */
-package com.heqingsong.KafkaUtils;
+package KafkaUtils;
 
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer081;
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema;
