@@ -1,0 +1,21 @@
+package com.cnblogs.yjmyzz.drools;
+
+import com.heqingsong.model.Car;
+import java.util.concurrent.atomic.AtomicInteger;
+
+global String temp;
+global AtomicInteger count;
+
+rule "car-discount>30"
+when
+    $car : Car(person.age > 30)
+    then
+        $car.setDiscount(80);
+    end
+
+rule "car-discount<=30"
+when
+    $car : Car(person.age <= 30)
+    then
+        $car.setDiscount(90);
+    end

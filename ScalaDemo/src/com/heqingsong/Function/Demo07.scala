@@ -17,14 +17,14 @@ object Demo07 {
     def sum4(a: Int) = (b: Int) => (c: Int) => (d: Int) => a + b + c + d
 
     def main(args: Array[String]): Unit = {
-        println( "1 + 2 = " + sum( 1, 2 ) )
-        println( "1 + 2 = " + sum2( 1 )( 2 ) )
+        println("1 + 2 = " + sum(1, 2))
+        println("1 + 2 = " + sum2(1)(2))
 
-        var s1 = sum3( 1 ) //返回的是一个函数
-        println( "s1 = " + s1 )
-        var s2 = s1( 1 )
-        println( "s2 = " + s2 )
-        println( sum4( 1 )( 2 )( 3 )( 4 ) )
+        var s1 = sum3(1) //返回的是一个函数
+        println("s1 = " + s1)
+        var s2 = s1(1)
+        println("s2 = " + s2)
+        println(sum4(1)(2)(3)(4))
     }
 }
 

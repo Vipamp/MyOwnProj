@@ -23,13 +23,14 @@ object Demo15 {
 
     def main(args: Array[String]): Unit = {
         def runFun() = {
-            Thread.sleep( 1000 )
-            println( "Thread1:Hello" )
+            Thread.sleep(1000)
+            println("Thread1:Hello")
         }
 
-        runThreadBlock( runFun ) //普通的调用情况
-        runThreadBlock{
-            Thread.sleep( 1000 ); println( "Thread2:Hello" )
+        runThreadBlock(runFun) //普通的调用情况
+        runThreadBlock {
+            Thread.sleep(1000);
+            println("Thread2:Hello")
         } //普通的调用情况
     }
 }

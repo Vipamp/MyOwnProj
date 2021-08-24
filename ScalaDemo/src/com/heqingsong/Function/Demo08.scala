@@ -24,7 +24,7 @@ object Demo08 {
      * 		f	：	(Int, Int) => (Int)		//方法体中，可以用f当做传递的函数去调用，函数类型就是参数类型
      * 		a,b	：	Int
      */
-    def op(f: (Int, Int) => (Int), a: Int, b: Int) = f( a, b )
+    def op(f: (Int, Int) => (Int), a: Int, b: Int) = f(a, b)
 
     //创建两个函数，加法和减法，输入参数是(Int,Int)，输出参数为Int
     def add(a: Int, b: Int): Int = a + b
@@ -36,12 +36,12 @@ object Demo08 {
         var addFunc = add _
         var subFunc = sub _
 
-        println( "a+b=" + op( addFunc, 1, 2 ) ) //将已经定义的函数，当做参数传递
-        println( "a-b=" + op( subFunc, 1, 2 ) )
-        println( "a+b=" + op( (a, b) => a + b, 1, 2 ) ) //直接定义匿名函数当参数传递
-        println( "a-b=" + op( (a, b) => a - b, 1, 2 ) )
-        println( "a+b=" + op( _ + _, 1, 2 ) ) //函数很简单，直接使用参数描述成表达式，当做匿名函数传递，这种方式在写spark中常用
-        println( "a-b=" + op( _ - _, 1, 2 ) )
+        println("a+b=" + op(addFunc, 1, 2)) //将已经定义的函数，当做参数传递
+        println("a-b=" + op(subFunc, 1, 2))
+        println("a+b=" + op((a, b) => a + b, 1, 2)) //直接定义匿名函数当参数传递
+        println("a-b=" + op((a, b) => a - b, 1, 2))
+        println("a+b=" + op(_ + _, 1, 2)) //函数很简单，直接使用参数描述成表达式，当做匿名函数传递，这种方式在写spark中常用
+        println("a-b=" + op(_ - _, 1, 2))
 
     }
 }

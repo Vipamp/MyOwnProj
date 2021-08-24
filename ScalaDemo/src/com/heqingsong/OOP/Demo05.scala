@@ -11,13 +11,15 @@ object Demo05 {
 }
 
 /**
- * 内部类
- */
+  * 内部类
+  */
 class Country {
     var name: String = _
     var ps = new ArrayBuffer[Province]()
+
     class Province {
         var name: String = _
+
         def this(fname: String) {
             this()
             this.name = fname

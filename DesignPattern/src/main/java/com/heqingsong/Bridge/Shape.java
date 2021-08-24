@@ -12,7 +12,7 @@
 package com.heqingsong.Bridge;
 
 public abstract class Shape {
-    Color color =null;
+    Color color = null;
 
 
     public void setColor(Color color) {

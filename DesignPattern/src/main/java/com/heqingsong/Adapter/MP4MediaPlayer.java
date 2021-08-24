@@ -14,7 +14,7 @@ package com.heqingsong.Adapter;
 public class MP4MediaPlayer implements AdvancedMediaPlayer {
     @Override
     public void playMp4(String fileName) {
-        System.out.println("play mp4: "+fileName);
+        System.out.println("play mp4: " + fileName);
     }
 
     @Override

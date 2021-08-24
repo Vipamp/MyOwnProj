@@ -14,6 +14,6 @@ package com.heqingsong.Bridge;
 public class Yellow implements Color {
     @Override
     public void paint(String shape) {
-        System.out.println("黃色的："+shape);
+        System.out.println("黃色的：" + shape);
     }
 }

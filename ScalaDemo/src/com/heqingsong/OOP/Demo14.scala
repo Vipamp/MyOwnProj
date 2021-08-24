@@ -1,14 +1,15 @@
 package com.heqingsong.OOP
 
 /**
- * 特质内部指定哪些类可以继承该特质
- */
+  * 特质内部指定哪些类可以继承该特质
+  */
 object Demo14 {
 
 }
 
 trait MyException {
-	this: Exception => def desc = println("这个自定义异常")
+    this: Exception =>
+    def desc = println("这个自定义异常")
 }
 
 /*

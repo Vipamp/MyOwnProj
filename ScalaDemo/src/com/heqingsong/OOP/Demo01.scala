@@ -18,28 +18,34 @@ object Demo01 {
 }
 
 /**
- * 定义类：
- * 		1、一个文件可以定义多个class类
- * 		2、定义类属性：
- * 			如果属性设置为private，需要自己定义get/set方法
- * 			如果属性设置为public(默认)，编译器会自动生成get/set方法，分别为"属性名"和"属性名_="
- */
+  * 定义类：
+  * 1、一个文件可以定义多个class类
+  * 2、定义类属性：
+  * 如果属性设置为private，需要自己定义get/set方法
+  * 如果属性设置为public(默认)，编译器会自动生成get/set方法，分别为"属性名"和"属性名_="
+  */
 class Point {
     //显示设置私有成员，自动生成的get/set方法也是私有的，需要自己重新编写get/set方法
     private var x = 0
     private var y = 0
 
     def getX = x
+
     def getY = y
 
-    def setX(xc: Int) = { x = xc }
-    def setY(yc: Int) = { y = yc }
+    def setX(xc: Int) = {
+        x = xc
+    }
+
+    def setY(yc: Int) = {
+        y = yc
+    }
 
     /**
-     * 	下面的两个，是自动生成的get/set方法，如果属性指定了为private，则这get/set方法也是private
-     * def x = x
-     * def x_=(a: Int) = { x = a }	//这里的"x_="是方法名
-     */
+      * 下面的两个，是自动生成的get/set方法，如果属性指定了为private，则这get/set方法也是private
+      * def x = x
+      * def x_=(a: Int) = { x = a }	//这里的"x_="是方法名
+      */
 
 }
 
